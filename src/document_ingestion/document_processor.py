@@ -10,6 +10,7 @@ from langchain_community.document_loaders import (
 )
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
+import uuid
 
 class DocumentProcessor:
     """Handle document loading and procssing"""
@@ -61,6 +62,7 @@ class DocumentProcessor:
         for src in sources:
             if src.startswith("http://") or src.startswith("https://"):
                 docs.extend(self.load_from_url(src))
+                continue
 
             path = Path("data")
             if path.is_dir():  ## PDF Directory

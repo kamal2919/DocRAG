@@ -4,11 +4,12 @@ from typing import List
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 from langchain_core.documents import Document
+import uuid
 
 class VectoreStore:
     """Manages vector store operations"""
 
-    def __init__(self, documents:List[Document]):
+    def __init__(self):
         """Intialize vector store with OpenAI embeddings"""
         self.embeddings = OpenAIEmbeddings()
         self.vectorstore = None

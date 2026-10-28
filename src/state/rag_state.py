@@ -3,6 +3,7 @@
 from typing import List
 from pydantic import BaseModel
 from langchain_core.documents import Document
+import uuid
 
 class RAGState(BaseModel):
     """State object for RAG workflow"""
